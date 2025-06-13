@@ -1,0 +1,87 @@
+[
+    {
+        "student_id": 912,
+        "name": "Ioana",
+        "group": 913
+    },
+    {
+        "student_id": 913,
+        "name": "Mihai",
+        "group": 911
+    },
+    {
+        "student_id": 915,
+        "name": "Radu",
+        "group": 911
+    },
+    {
+        "student_id": 914,
+        "name": "Sofia",
+        "group": 917
+    },
+    {
+        "student_id": 914,
+        "name": "Andrei",
+        "group": 914
+    },
+    {
+        "student_id": 916,
+        "name": "Elena",
+        "group": 911
+    },
+    {
+        "student_id": 913,
+        "name": "Radu",
+        "group": 915
+    },
+    {
+        "student_id": 915,
+        "name": "Cristina",
+        "group": 916
+    },
+    {
+        "student_id": 916,
+        "name": "Victor",
+        "group": 911
+    },
+    {
+        "student_id": 913,
+        "name": "Elena",
+        "group": 912
+    },
+    {
+        "student_id": 914,
+        "name": "Iulia",
+        "group": 912
+    },
+    {
+        "student_id": 915,
+        "name": "Florin",
+        "group": 916
+    },
+    {
+        "student_id": 914,
+        "name": "Darius",
+        "group": 917
+    },
+    {
+        "student_id": 914,
+        "name": "Iulia",
+        "group": 913
+    },
+    {
+        "student_id": 911,
+        "name": "Cristina",
+        "group": 915
+    },
+    {
+        "student_id": 912,
+        "name": "Andrei",
+        "group": 911
+    },
+    {
+        "student_id": 912,
+        "name": "Darius",
+        "group": 912
+    }
+]

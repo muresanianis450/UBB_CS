@@ -1,0 +1,3 @@
+/mnt/c/Users/mures/CLionProjects/QueueLaboratory01/cmake-build-debug/CMakeFiles/QueueLaboratory01.dir
+/mnt/c/Users/mures/CLionProjects/QueueLaboratory01/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/Users/mures/CLionProjects/QueueLaboratory01/cmake-build-debug/CMakeFiles/rebuild_cache.dir

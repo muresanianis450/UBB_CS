@@ -1,0 +1,188 @@
+#############
+#Jump Search#
+#############
+
+Best Case: O(1)
+This occurs when the target element is the first element of the array, which can be found immediately with the first jump.
+Average Case:
+
+
+Average Case: O(√n)
+On average, jump search has to make √n jumps to find the block containing the target element.
+Once the block is found, a linear search of up to √n elements is performed within that block.
+Therefore, the average case complexity is determined by the jump part (√n) and the subsequent linear search within the block (√n), resulting in an average time complexity of O(√n).
+Worst Case: O(√n)
+The worst case happens when the element is either the last element or is not present in the array.
+The algorithm will jump through all blocks (n/√n or √n jumps) and then perform a linear search in the last block of size √n.
+Thus, the time complexity in the worst case remains O(√n).
+
+
+#############
+#Stooge sort#
+############
+
+is independent of input data as it justs checks if first
+element is greater than the last element, It will check for every array position as long as the array size is 3 or greater.
+Even if the array is sorted stooge sort will run on it,
+hence it's time complexity remains same for every iteration of stooge sort.
+
+Worst Case Scenario
+___________________
+: O(N2.709) , it occurs when the array is
+already sorted yet we waste the time trying to sort it again, no swaps takes
+ place only the recursive calls happen.
+
+Best Case Scenario
+__________________
+: O(N2.709), it occurs when we have a unsorted array ,
+the end result is a sorted array , the time take it still the same as worst case scenario but
+in this case we do end up with a sorted array.
+
+
+Average Case Scenario : O(N2.709)
+____________________
+
+
+################
+#Insertion Sort#
+################
+
+Best Case: O(N)
+_______________
+The best-case time complexity of Insertion Sort occurs when the input array is
+already sorted.
+In this scenario, each element is compared with its preceding elements
+until no swaps are needed, resulting in a linear time complexity.
+Therefore, the best-case time complexity is O(N), where n is the number of elements in the array.
+
+
+Average Case: O(N2)
+___________________
+The average-case time complexity of Insertion Sort is also O(N2).
+This complexity arises from the nature of the algorithm, which involves
+pairwise comparisons and swaps to sort the elements.
+Although the exact number of comparisons and swaps may vary depending on the
+input, the average-case time complexity remains quadratic.
+
+
+Worst Case: O(N2)
+Sorted in descending order -> still O(n2)
+_________________
+
+
+
+
+
+___________
+- TEST RUNS-
+___________
+
+
+
+5. Best Case:
++------+----------------+----------------------+
+| Size | Sorting method | Time complexity (ms) |
++------+----------------+----------------------+
+| 50   |    Stooge Sort |      4.9366000       |
++------+----------------+----------------------+
+| 50   | Insertion Sort |      0.0085000       |
++------+----------------+----------------------+
+| 50   |    Jump Search |      0.0093000       |
++------+----------------+----------------------+
+| 100  |    Stooge Sort |      43.8390000      |
++------+----------------+----------------------+
+| 100  | Insertion Sort |      0.0133000       |
++------+----------------+----------------------+
+| 100  |    Jump Search |      0.0124000       |
++------+----------------+----------------------+
+| 200  |    Stooge Sort |     127.0681000      |
++------+----------------+----------------------+
+| 200  | Insertion Sort |      0.0188000       |
++------+----------------+----------------------+
+| 200  |    Jump Search |      0.0091000       |
++------+----------------+----------------------+
+| 400  |    Stooge Sort |     1226.6341000     |
++------+----------------+----------------------+
+| 400  | Insertion Sort |      0.0551000       |
++------+----------------+----------------------+
+| 400  |    Jump Search |      0.0106000       |
++------+----------------+----------------------+
+| 800  |    Stooge Sort |    11403.1657000     |
++------+----------------+----------------------+
+| 800  | Insertion Sort |      0.0776000       |
++------+----------------+----------------------+
+| 800  |    Jump Search |      0.0106000       |
++------+----------------+----------------------+
+
+
+6. Average Case
++------+----------------+----------------------+
+| Size | Sorting method | Time complexity (ms) |
++------+----------------+----------------------+
+| 50   |    Stooge Sort |      4.8114000       |
++------+----------------+----------------------+
+| 50   | Insertion Sort |      0.0091000       |
++------+----------------+----------------------+
+| 50   |    Jump Search |      0.0113000       |
++------+----------------+----------------------+
+| 100  |    Stooge Sort |      43.4363000      |
++------+----------------+----------------------+
+| 100  | Insertion Sort |      0.0134000       |
++------+----------------+----------------------+
+| 100  |    Jump Search |      0.0183000       |
++------+----------------+----------------------+
+| 200  |    Stooge Sort |     126.1178000      |
++------+----------------+----------------------+
+| 200  | Insertion Sort |      0.0184000       |
++------+----------------+----------------------+
+| 200  |    Jump Search |      0.0143000       |
++------+----------------+----------------------+
+| 400  |    Stooge Sort |     1224.6308000     |
++------+----------------+----------------------+
+| 400  | Insertion Sort |      0.0727000       |
++------+----------------+----------------------+
+| 400  |    Jump Search |      0.0122000       |
++------+----------------+----------------------+
+| 800  |    Stooge Sort |    11076.2994000     |
++------+----------------+----------------------+
+| 800  | Insertion Sort |      0.1550000       |
++------+----------------+----------------------+
+| 800  |    Jump Search |      0.0189000       |
++------+----------------+----------------------+
+
+
+
+7. Worst Case
++------+----------------+----------------------+
+| Size | Sorting method | Time complexity (ms) |
++------+----------------+----------------------+
+| 50   |    Stooge Sort |      4.9682000       |
++------+----------------+----------------------+
+| 50   | Insertion Sort |      0.0633000       |
++------+----------------+----------------------+
+| 50   |    Jump Search |      0.0141000       |
++------+----------------+----------------------+
+| 100  |    Stooge Sort |      44.8328000      |
++------+----------------+----------------------+
+| 100  | Insertion Sort |      0.1671000       |
++------+----------------+----------------------+
+| 100  |    Jump Search |      0.0121000       |
++------+----------------+----------------------+
+| 200  |    Stooge Sort |     126.6239000      |
++------+----------------+----------------------+
+| 200  | Insertion Sort |      0.6341000       |
++------+----------------+----------------------+
+| 200  |    Jump Search |      0.0138000       |
++------+----------------+----------------------+
+| 400  |    Stooge Sort |     1232.4250001     |
++------+----------------+----------------------+
+| 400  | Insertion Sort |      2.5412000       |
++------+----------------+----------------------+
+| 400  |    Jump Search |      0.0377000       |
++------+----------------+----------------------+
+| 800  |    Stooge Sort |    11294.8245000     |
++------+----------------+----------------------+
+| 800  | Insertion Sort |      11.1324000      |
++------+----------------+----------------------+
+| 800  |    Jump Search |      0.0304000       |
++------+----------------+----------------------+
