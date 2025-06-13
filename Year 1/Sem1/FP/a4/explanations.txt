@@ -1,0 +1,34 @@
+Steps Explained
+Loop Through Possible Subsequence Lengths (size):
+
+We want to check for repeated subsequences of various lengths.
+The size loop goes from 1 up to length // 2. This is because if a subsequence is repeated, it must fit twice within the array x, so the maximum subsequence length we need to check is half the length of x.
+Loop Through Starting Positions for the First Subsequence (start):
+
+For each size, we try to find a repeated subsequence of that length.
+The start loop sets the starting index for the first subsequence (subseq1) of length size.
+We only go up to length - 2 * size + 1 for start to make sure there’s enough room in x for both subseq1 and a second subsequence (subseq2) of length size right after subseq1.
+Define the First Subsequence (subseq1):
+
+For each starting position start, we create a subsequence subseq1 by taking size elements starting at start (x[start:start + size]).
+Loop Through Starting Positions for the Second Subsequence (start2):
+
+Next, for each subseq1, we check every possible position where another subsequence of the same length could start.
+start2 is initialized to start + size, ensuring subseq2 is not overlapping with subseq1.
+We only go up to length - size + 1 for start2 to make sure subseq2 fits within x.
+Define the Second Subsequence (subseq2):
+
+For each valid start2, we create a second subsequence subseq2 (x[start2:start2 + size]) with the same length size.
+Compare subseq1 and subseq2:
+
+If subseq1 == subseq2, we have found a repeated subsequence of length size within x, so we return True immediately.
+If no repeated subsequences are found across all positions and lengths, the function returns False.
+Example
+Let’s go through a quick example where x = [1, 2, 1, 3, 1, 2, 1, 3]:
+
+Size 1: The function first looks for repeated subsequences of length 1. It will find [1] and [1] at different positions.
+Size 2: Then, it checks for repeated subsequences of length 2, where it finds [1, 3] repeated.
+If any repeated subsequence is found, has_repeated_subsequence returns True, meaning x has repeated patterns.
+
+Why This Works
+This function exhaustively checks all pairs of possible subsequences of any length up to half the size of x. It is efficient enough for small values of n but can become computationally expensive for large arrays because it considers all possible subsequence pairs.
