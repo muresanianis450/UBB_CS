@@ -1,0 +1,54 @@
+     1                                  bits 32                ; assembling for the 32-bit architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit            ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll ; exit is a function that ends the calling process, defined in msvcrt.dll                                                                                                                       
+     9                                                         ; msvcrt.dll contains exit, printf, and all the other important C-runtime functions
+    10                                  
+    11                                  ; our data is declared here (the variables needed by our program)
+    12                                  segment data use32 class=data
+    13 00000000 01                          a db 1
+    14 00000001 02                          b db 2
+    15 00000002 02                          c db 2
+    16 00000003 01000000                    e dd 1
+    17                                  ;(a*b*25+c*3)/(a+b)+e; a,b,c-byte; e-doubleword
+    18                                  ; our code starts here
+    19                                  segment code use32 class=code
+    20                                      start:
+    21                                          ;doing the (a*b*25) 
+    22 00000000 B800000000                      mov eax,0 
+    23 00000005 BB00000000                      mov ebx,0
+    24 0000000A A0[00000000]                    mov al, byte[a]
+    25 0000000F 8A1D[01000000]                  mov bl,[b]
+    26 00000015 0FAFC3                          imul eax,ebx
+    27 00000018 6BC019                          imul eax,25
+    28                                          
+    29                                          ;moving eax in ebx then doing the c*3
+    30 0000001B BB00000000                      mov ebx,0
+    31 00000020 89C3                            mov ebx, eax
+    32 00000022 B800000000                      mov eax,0
+    33 00000027 A0[02000000]                    mov al,byte[c]
+    34 0000002C B900000000                      mov ECX, 0
+    35 00000031 66B90300                        mov CX,3
+    36 00000035 66F7E9                          imul CX
+    37                                          
+    38 00000038 01D8                            add eax, ebx
+    39                                          
+    40                                          ;did the (a+b)+e
+    41 0000003A BB00000000                      mov ebx,0
+    42 0000003F 8A1D[00000000]                  mov bl,byte[a]
+    43 00000045 021D[01000000]                  add bl,byte[b]
+    44 0000004B 031D[03000000]                  add ebx,dword[e]
+    45                                         
+    46                                  
+    47                                         ;clearing EDX register in order to store the remaining of the divison 
+    48 00000051 BA00000000                      mov edx,0
+    49 00000056 F7FB                            idiv ebx
+    50                                              
+    51                                  
+    52                                          ; Exit the program
+    53 00000058 6A00                            push dword 0            
+    54 0000005A FF15[00000000]                  call [exit]             
