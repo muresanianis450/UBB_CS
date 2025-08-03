@@ -1,0 +1,8 @@
+Iuliana 10.7 21.0 0
+Heavy traffic at intersection
+
+Ianis 11.9 22.0 1
+Accident at the suburbs
+
+Carol 6.0 18.0 0
+Fallen tree blocking traffic

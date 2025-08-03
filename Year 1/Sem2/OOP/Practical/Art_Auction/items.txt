@@ -1,0 +1,3 @@
+FSEGA;paiting;100;[(1,2025-05-10,140),(3,2025-06-01,500)]
+MATHEMATICA;painting;800;[]
+CENTRAL;sculpture;1200;[(2,2025-05-55,1100)]

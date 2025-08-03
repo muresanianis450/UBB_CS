@@ -1,0 +1,6 @@
+a.cpp 1 Ianis Iuliana
+b.cpp 0 Arthur
+c.cpp 1 Arthur Ianis
+d.cpp 0 Iuliana
+e.cpp 1 Iuliana Ianis
+

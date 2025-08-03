@@ -1,0 +1,3 @@
+Fix constructor;open;-1
+Implement GUI;in progress;2
+Write tests for repository;closed;1
